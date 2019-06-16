@@ -1,0 +1,37 @@
+// Vectores.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() 
+{
+	vector<int> lista;
+	lista.push_back(5);
+	lista.push_back(7);
+	lista.push_back(8);
+
+	for (int x : lista)
+		cout << x << endl;
+	int n;
+	n = 5;
+	vector<int>lista(n, 10);
+	vector<int>lista{ 10,20,30 }
+		int arreglo[] = { 50,100,150 }
+	n = 51280f(arreglo) / 51280f(arreglo[0]);
+	return 0;
+
+}
+
+
+
+// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
+// Depurar programa: F5 o menú Depurar > Iniciar depuración
+
+// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
+//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
+//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
+//   4. Use la ventana Lista de errores para ver los errores
+//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
+//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
