@@ -32,6 +32,8 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.imptimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -87,8 +87,9 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "&Nuevo";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // abrirToolStripMenuItem
             // 
@@ -97,33 +98,47 @@
             this.abrirToolStripMenuItem.Text = "A&brir";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Text = "&Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // guardarComoToolStripMenuItem
+            // 
+            this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarComoToolStripMenuItem.Text = "&Guardar c&omo";
+            this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
+            // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarToolStripMenuItem.Text = "&Cerrar";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(117, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // imptimirToolStripMenuItem
             // 
             this.imptimirToolStripMenuItem.Name = "imptimirToolStripMenuItem";
-            this.imptimirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.imptimirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imptimirToolStripMenuItem.Text = "&Imprimir";
             this.imptimirToolStripMenuItem.Click += new System.EventHandler(this.imptimirToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(117, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "&Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -194,6 +209,7 @@
             this.toolStripStatusLabel1.AutoSize = false;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // richTextBox1
             // 
@@ -203,18 +219,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(800, 404);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
-            // 
-            // guardarToolStripMenuItem
-            // 
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.guardarToolStripMenuItem.Text = "&Guardar";
-            // 
-            // guardarComoToolStripMenuItem
-            // 
-            this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.guardarComoToolStripMenuItem.Text = "&Guardar c&omo";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // openFileDialog1
             // 

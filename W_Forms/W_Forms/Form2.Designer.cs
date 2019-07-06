@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,24 +35,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Salir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::W_Forms.Properties.Resources.LogoUPT1234;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 184);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(246, 72);
+            this.label2.Location = new System.Drawing.Point(247, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(416, 33);
             this.label2.TabIndex = 2;
@@ -65,7 +55,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(248, 147);
+            this.label3.Location = new System.Drawing.Point(165, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(341, 25);
             this.label3.TabIndex = 3;
@@ -78,9 +68,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(199, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 25);
+            this.label1.Size = new System.Drawing.Size(328, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Programacion de Perifericos";
+            this.label1.Text = "Materia: Programacion de Perifericos";
             // 
             // label4
             // 
@@ -112,9 +102,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(249, 393);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 23);
+            this.label6.Size = new System.Drawing.Size(150, 23);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Mayo/Agosto/ 2019";
+            this.label6.Text = "Mayo/Agosto/2019";
             this.label6.Click += new System.EventHandler(this.Label6_Click);
             // 
             // Salir
@@ -127,6 +117,17 @@
             this.Salir.Text = "Salida";
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::W_Forms.Properties.Resources.LogoUPT1234;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(213, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AcercaDe
             // 

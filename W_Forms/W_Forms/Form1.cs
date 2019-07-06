@@ -12,6 +12,9 @@ namespace W_Forms
 {
     public partial class Principal : Form
     {
+        bool TextoCambiado = false;
+        bool cambio = true;
+        string narchivo = "";
         public Principal()
         {
             InitializeComponent();
@@ -74,21 +77,160 @@ namespace W_Forms
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text != "")
+            if (!TextoCambiado)
             {
-                if (MessageBox.Show("¿Desea terminar sin guardar?", "Mi aplicacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                cambio = false;
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                }
+                narchivo = openFileDialog1.FileName;
+                cambio = true;
+            }
+            else
+            {
+                DialogResult dialog = MessageBox.Show(this, "Tiene texto Modificado/n ¿Desea Guardarlo en el archivo actual?", "Mi aplicacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Cancel)
+                {
+                    new CancelEventArgs().Cancel = true;
+                }
+                else if (dialog == DialogResult.Yes)
+                {
+                    if (narchivo == "")
+                    {
+                        MessageBox.Show("guardar como");
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                            narchivo = saveFileDialog1.FileName;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("guardar");
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                            narchivo = saveFileDialog1.FileName;
+                        }
+
+                    }
+                    TextoCambiado = false;
+                }
+                else if (dialog == DialogResult.No)
+                {
+                     MessageBox.Show("guardar como");
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                        narchivo = saveFileDialog1.FileName;
+                    }
+                    TextoCambiado = false;
+                }
+               
+            }
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+                if (narchivo == "")
+                {
+                    MessageBox.Show("guardar como");
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                        narchivo = saveFileDialog1.FileName;
                     }
                 }
-
-            }
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            else
             {
-                richTextBox1.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                    DialogResult dialogResult= MessageBox.Show("guardar");
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        richTextBox1.SaveFile(narchivo, RichTextBoxStreamType.PlainText);
+                        narchivo = saveFileDialog1.FileName;
+                    }
             }
+            TextoCambiado = false;
+
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            if (cambio)
+            {
+                TextoCambiado = true;
+            }
+
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+
+        {
+            if (!TextoCambiado)
+            {
+                richTextBox1.Clear();
+                narchivo = "";
+            }
+            else
+            {
+                DialogResult dialog = MessageBox.Show(this, "Tiene texto Modificado/n ¿Desea Guardarlo en el archivo actual?", "Mi aplicacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (narchivo == "")
+                    {
+                        MessageBox.Show("guardar como");
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                            narchivo = saveFileDialog1.FileName;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("guardar");
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                            narchivo = saveFileDialog1.FileName;
+                        }
+                    }
+                    TextoCambiado = false;
+                }
+                if (dialog == DialogResult.No)
+                {
+                    MessageBox.Show("guardar como");
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                        narchivo = saveFileDialog1.FileName;
+                    }
+                    TextoCambiado = false;
+                }
+                if (dialog == DialogResult.Cancel)
+                {
+                    new CancelEventArgs().Cancel = true;
+                }
+            }
+        }
+
+        private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                narchivo = saveFileDialog1.FileName;
+            }
+            TextoCambiado = false;
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = narchivo;
         }
     }
 }
+//********************Examen Practico de Segundo PARCIAL*********************************//
